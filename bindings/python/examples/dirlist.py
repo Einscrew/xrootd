@@ -15,6 +15,6 @@ from XRootD.client.flags import DirListFlags
 myclient = client.FileSystem('root://localhost')
 status, listing = myclient.dirlist('/tmp', DirListFlags.STAT)
 
-print listing.parent
+print(listing.parent)
 for entry in listing:
-  print "{0} {1:>10} {2}".format(entry.statinfo.modtimestr, entry.statinfo.size, entry.name)
+  print("{0} {1:>10} {2}".format(entry.statinfo.modtimestr, entry.statinfo.size, entry.name))

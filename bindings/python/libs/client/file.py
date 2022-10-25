@@ -21,7 +21,7 @@
 # granted to it by virtue of its status as an Intergovernmental Organization
 # or submit itself to any jurisdiction.
 #-------------------------------------------------------------------------------
-from __future__ import absolute_import, division, print_function
+
 
 from pyxrootd import client
 from XRootD.client.responses import XRootDStatus, StatInfo, VectorReadInfo
@@ -44,7 +44,7 @@ class File(object):
     return self
 
   def __next__(self):
-    return self.__file.next()
+    return next(self.__file)
 
   # Python 2 compatibility
   next = __next__

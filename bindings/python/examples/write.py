@@ -11,8 +11,8 @@ from XRootD import client
 from XRootD.client.flags import OpenFlags
 
 with client.File() as f:
-  print f.open('root://localhost//tmp/eggs', OpenFlags.UPDATE)
+  print(f.open('root://localhost//tmp/eggs', OpenFlags.UPDATE))
 
   data = 'spam\n'
   f.write(data, offset=15)
-  print f.read()
+  print(f.read())

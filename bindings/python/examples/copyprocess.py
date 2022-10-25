@@ -30,15 +30,15 @@ from XRootD import client
 
 class MyCopyProgressHandler(client.utils.CopyProgressHandler):
   def begin(self, jobId, total, source, target):
-    print 'id: %d, total: %d' % (jobId, total)
-    print 'source: %s' % source
-    print 'target: %s' % target
+    print('id: %d, total: %d' % (jobId, total))
+    print('source: %s' % source)
+    print('target: %s' % target)
 
   def end(self, jobId, result):
-    print 'end status:', jobId, result
+    print('end status:', jobId, result)
 
   def update(self, jobId, processed, total):
-    print 'jobId: %d, processed: %d, total: %d' % (jobId, processed, total)
+    print('jobId: %d, processed: %d, total: %d' % (jobId, processed, total))
 
   def should_cancel( jobId ):
     return False

@@ -41,16 +41,16 @@ def test_filesystem():
 
 def sync(func, args, hasReturnObject):
   status, response = func(*args)
-  print status
+  print(status)
   assert status.ok
   if hasReturnObject:
-      print response
+      print(response)
       assert response
 
 def async(func, args, hasReturnObject):
   handler = AsyncResponseHandler()
   status = func(callback=handler, *args)
-  print status
+  print(status)
   assert status.ok
   status, response, hostlist = handler.wait()
 
@@ -60,7 +60,7 @@ def async(func, args, hasReturnObject):
 
   for host in hostlist:
     assert host.url
-    print host.url
+    print((host.url))
 
   if hasReturnObject:
     assert response
@@ -79,7 +79,7 @@ def test_copy_sync():
 
   try:
     os.remove('/tmp/eggs')
-  except OSError, __:
+  except OSError as __:
     pass
 
 def test_locate_sync():
@@ -127,7 +127,7 @@ def test_dirlist_sync():
 
   for item in response:
     assert item.name
-    print item.statinfo
+    print((item.statinfo))
     assert item.statinfo
     assert item.hostaddr
     
@@ -143,11 +143,11 @@ def test_dirlist_async():
   assert status.ok
 
   for h in hostlist:
-    print h.url
+    print((h.url))
 
   for item in response:
     assert item.name
-    print item.statinfo
+    print((item.statinfo))
     assert item.statinfo
     assert item.hostaddr
 
@@ -158,7 +158,7 @@ def test_query_sync():
   status, response = c.query(QueryCode.STATS, 'a')
   assert status.ok
   assert response
-  print response
+  print(response)
 
 def test_query_async():
   c = client.FileSystem(SERVER_URL)
@@ -169,7 +169,7 @@ def test_query_async():
   status, response, hostlist = handler.wait()
   assert status.ok
   assert response
-  print response
+  print(response)
   
 def test_mkdir_flags():
   c = client.FileSystem(SERVER_URL)

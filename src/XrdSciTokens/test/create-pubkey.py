@@ -1,4 +1,4 @@
-import urllib2
+import urllib.request, urllib.error, urllib.parse
 import argparse
 import json
 
@@ -39,9 +39,9 @@ def main():
     token_str = token.serialize(issuer="https://localhost")
     headers = {"Authorization": "Bearer {0}".format(token_str)}
     #print token_str
-    request = urllib2.Request("http://localhost:8080/tmp/random.txt", headers=headers)
-    contents = urllib2.urlopen(request).read()
-    print contents,
+    request = urllib.request.Request("http://localhost:8080/tmp/random.txt", headers=headers)
+    contents = urllib.request.urlopen(request).read()
+    print(contents, end=' ')
     
     #request = urllib2.Request("http://localhost:8080/tmp/random.txt")
     #contents = urllib2.urlopen(request).read()

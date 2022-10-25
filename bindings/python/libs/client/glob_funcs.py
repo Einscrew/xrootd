@@ -21,7 +21,7 @@
 # granted to it by virtue of its status as an Intergovernmental Organization
 # or submit itself to any jurisdiction.
 #-------------------------------------------------------------------------------
-from __future__ import absolute_import, division, print_function
+
 
 from XRootD.client.filesystem import FileSystem
 
@@ -32,7 +32,7 @@ import sys
 if sys.version_info[0] > 2:
     from urllib.parse import urlparse
 else:
-    from urlparse import urlparse
+    from urllib.parse import urlparse
 
 
 __all__ = ["glob", "iglob"]

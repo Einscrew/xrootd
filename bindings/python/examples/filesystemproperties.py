@@ -10,7 +10,7 @@ myclient.mkdir("/tmp/some/dir", MkDirFlags.MAKEPATH)
 myclient.rmdir("/tmp/some/dir")
 myclient.rmdir("/tmp/some")
 
-print myclient.get_property( "FollowRedirects" )
-print myclient.set_property( "FollowRedirects", "false" )
-print myclient.get_property( "FollowRedirects" )
+print(myclient.get_property( "FollowRedirects" ))
+print(myclient.set_property( "FollowRedirects", "false" ))
+print(myclient.get_property( "FollowRedirects" ))
 

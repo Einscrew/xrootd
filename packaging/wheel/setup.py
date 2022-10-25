@@ -159,7 +159,7 @@ class CustomInstall(install):
           if not comp_bin:     print('\tC++ compiler is missing (g++, c++, clang, etc.)!')
           if not zlib_dev:     print('\tzlib development package is missing!')
           if not openssl_dev:  print('\topenssl development package is missing!')
-          if not python_dev:   print('\t{} development package is missing!'.format(pyname) )
+          if not python_dev:   print(('\t{} development package is missing!'.format(pyname) ))
           if not uuid_dev:     print('\tuuid development package is missing')
           if not devtoolset7:  print('\tdevtoolset-7-gcc-c++ package is missing')
           raise Exception( 'Dependencies missing!' )

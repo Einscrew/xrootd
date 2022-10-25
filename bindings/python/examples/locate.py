@@ -12,4 +12,4 @@ from XRootD.client.flags import OpenFlags
 myclient = client.FileSystem("root://localhost")
 status, locations = myclient.locate("/tmp", OpenFlags.REFRESH)
 
-print locations
+print(locations)

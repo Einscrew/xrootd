@@ -16,4 +16,4 @@ from XRootD.client.flags import QueryCode
 myclient = client.FileSystem("root://localhost")
 status, response = myclient.query(QueryCode.SPACE, '/tmp')
 
-print response
+print(response)
