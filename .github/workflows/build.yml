@@ -192,6 +192,7 @@ jobs:
             python2-pip \
             python2-setuptools \
             python2-devel \
+            python2-futures \
             git \
             cppunit-devel
         yum clean all
