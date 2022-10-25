@@ -164,7 +164,7 @@ jobs:
         python3 -m pip show xrootd
         python3 -c 'import XRootD; print(XRootD)'
         python3 -c 'import pyxrootd; print(pyxrootd)'
-        python3 -c 'from XRootD import client; print(client.FileSystem("root://someserver:1094"))'
+        python3 -c 'from XRootD import client; from XRootD.client.flags import PrepareFlags; fs=client.FileSystem("root://someserver:1094"); print(fs); fs.prepare(["/tmp/foo"], PrepareFlags.STAGE)'
 
   # TODO: Drop once Python 2 support is dropped
   cmake-centos7-python2:
@@ -236,7 +236,7 @@ jobs:
         python2 -m pip show xrootd
         python2 -c 'import XRootD; print(XRootD)'
         python2 -c 'import pyxrootd; print(pyxrootd)'
-        python2 -c 'from XRootD import client; print(client.FileSystem("root://someserver:1094"))'
+        python2 -c 'from XRootD import client; from XRootD.client.flags import PrepareFlags; fs=client.FileSystem("root://someserver:1094"); print(fs); fs.prepare(["/tmp/foo"], PrepareFlags.STAGE)'
 
   cmake-ubuntu-updated-python:
 
@@ -300,7 +300,7 @@ jobs:
         python3 -m pip show xrootd
         python3 -c 'import XRootD; print(XRootD)'
         python3 -c 'import pyxrootd; print(pyxrootd)'
-        python3 -c 'from XRootD import client; print(client.FileSystem("root://someserver:1094"))'
+        python3 -c 'from XRootD import client; from XRootD.client.flags import PrepareFlags; fs=client.FileSystem("root://someserver:1094"); print(fs); fs.prepare(["/tmp/foo"], PrepareFlags.STAGE)'
 
   cmake-macos:
 
